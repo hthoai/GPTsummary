@@ -1,0 +1,14 @@
+streamlit-mermaid
+
+langchain
+langchain_community
+langchain_openai
+langchain-google-genai
+langgraph
+
+youtube-transcript-api
+pytube
+
+PyMuPDF
+
+python-dotenv

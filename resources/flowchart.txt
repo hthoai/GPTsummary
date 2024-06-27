@@ -1,0 +1,33 @@
+graph TD
+    subgraph S["Training GPT Assistants"]
+        A["Pretraining"]
+        B["Supervised Fine-tuning (SFT)"]
+        C["Reward Modeling"]
+        D["Reinforcement Learning from Human Feedback RLHF"]
+        A --> B
+        B --> C
+        C --> D
+    end
+    subgraph T["Applying GPT Assistants"]
+        E["Prompt Engineering"]
+        F["Fine-tuning"]
+        G["Retrieval-augmented Generation"]
+        H["Constraint Prompting"]
+        E --> F
+        E --> G
+        E --> H
+    end
+    subgraph U["Key Takeaways"]
+        I["Model power depends on data and time, not just parameters."]
+        J["Prompting guides base models for specific tasks."]
+        K["RLHF models outperform SFT models due to human feedback."]
+        L["LLMs have cognitive advantages but lack human reasoning."]
+    end
+    subgraph V["Recommendations"]
+        M["Prioritize performance with strong models and prompt engineering."]
+        N["Optimize costs with smaller models and shorter prompts."]
+        O["Use LLMs for inspiration and suggestions with human oversight."]
+    end
+    S --> T
+    S --> U
+    T --> V
