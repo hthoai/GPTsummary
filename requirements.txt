@@ -11,3 +11,4 @@ validators
 PyMuPDF
 loguru
 pydantic-settings
+beautifulsoup4
