@@ -7,8 +7,7 @@ langchain-google-genai
 langgraph
 
 youtube-transcript-api
-pytube
-
+validators
 PyMuPDF
-
-python-dotenv
+loguru
+pydantic-settings
