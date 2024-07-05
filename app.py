@@ -38,14 +38,16 @@ def create_summarizers(
 
 
 if __name__ == "__main__":
-    st.set_page_config(page_title="GPTsummary", layout="wide")
+    st.set_page_config(
+        page_title="GPTsummary", layout="wide", page_icon="resources/icon.png"
+    )
 
     llm, language = sidebar_options()
     youtube_summarizer, book_summarizer, doc_summarizer = create_summarizers(
         llm, language
     )
 
-    # Create tabs for different summarization options
+    # Create tabs
     document_tab, video_tab, book_tab = st.tabs(
         ["📝 Document", "📹 YouTube Video", "📚 Book"]
     )
