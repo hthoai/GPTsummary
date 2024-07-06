@@ -39,10 +39,11 @@ def sidebar_options():
             base_url=settings.GROQ_BASE_URL,
         )
 
+    st.session_state.llm = llm
+
     # Sidebar for language selection
     st.sidebar.title("Language Selection")
     language = st.sidebar.selectbox(
         "Choose Language", ["English", "Vietnamese", "Chinese", "Japanese"], index=0
     )
-
-    return llm, language
+    st.session_state.language = language

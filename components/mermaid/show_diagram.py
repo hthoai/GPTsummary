@@ -68,7 +68,6 @@ def show_diagram(llm: Any, language: str, text: str):
             mermaid_code = mermaid_code.replace("`", "").lstrip("\n").lstrip("mermaid")
 
     try:
-        # mermaid(mermaid_code)
         mermaid_chart(mermaid_code)
     except Exception as e:
         st.error(f"Failed to render the diagram. Please try again. Error:\n{e}")
