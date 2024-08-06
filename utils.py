@@ -15,7 +15,7 @@ def sidebar_options():
 
     if model_provider == "Gemini":
         model_name = st.sidebar.selectbox(
-            "Choose Model", ["gemini-1.5-flash-latest", "gemini-1.5-pro-latest"]
+            "Choose Model", ["gemini-1.5-flash-latest", "gemini-1.5-pro-latest", "gemini-1.5-pro-exp-0801"]
         )
         llm = ChatGoogleGenerativeAI(
             model=model_name, temperature=0, google_api_key=settings.GOOGLE_API_KEY
