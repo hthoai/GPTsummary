@@ -1,5 +1,9 @@
 import streamlit as st
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_google_genai import (
+    ChatGoogleGenerativeAI,
+    HarmBlockThreshold,
+    HarmCategory,
+)
 from langchain_openai import ChatOpenAI
 
 from config import settings
@@ -17,8 +21,18 @@ def sidebar_options():
         model_name = st.sidebar.selectbox(
             "Choose Model", ["gemini-1.5-flash-latest", "gemini-1.5-pro-latest", "gemini-1.5-pro-exp-0801"]
         )
+        safety_settings = safety_settings={
+            HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
+            HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_NONE,
+            HarmCategory.HARM_CATEGORY_HATE_SPEECH HarmBlockThreshold.BLOCK_NONE,
+            HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT HarmBlockThreshold.BLOCK_NONE,
+            HarmCategory.HARM_CATEGORY_UNSPECIFIED HarmBlockThreshold.BLOCK_NONE
+        }
         llm = ChatGoogleGenerativeAI(
-            model=model_name, temperature=0, google_api_key=settings.GOOGLE_API_KEY
+            model=model_name,
+            temperature=0,
+            google_api_key=settings.GOOGLE_API_KEY,
+            safety_settings=safety_settings
         )
     elif model_provider == "Yi":
         model_name = st.sidebar.selectbox("Choose Model", ["yi-large"])
