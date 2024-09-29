@@ -1,7 +1,7 @@
 streamlit-mermaid
 
 langchain
-langchain_community
+langchain_community==0.3.1
 langchain_openai
 langchain-google-genai
 langgraph
