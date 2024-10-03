@@ -18,7 +18,7 @@ def get_youtube_subtitle_string(video_url: str) -> str:
             video_url,
             language=["en", "en-US", "en-UK", "en-GB", "vi", "ja", "ko", "zh-Hans","zh-Hant"],
         )
-        transcript = loader.load().page_content
+        transcript = loader.load()[0].page_content
 
         return transcript
     except (NoTranscriptFound, TranscriptsDisabled):
